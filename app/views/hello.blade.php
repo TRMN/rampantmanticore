@@ -59,12 +59,12 @@
         }
 
         .rmheader {
-            font-family: "Incised901W01-NordItali";
-            color: #000;
+            font-family: "Incised901W01-NordItali" !important;
+            color: #000 !important;
             text-shadow: -1px -1px 0 #fff,
             1px -1px 0 #fff,
             -1px 1px 0 #fff,
-            1px 1px 0 #fff;
+            1px 1px 0 #fff !important;
 
         }
 
