@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Rampant Manticore Awards</title>
+    <!--
     <style>
         @import url(//fonts.googleapis.com/css?family=Prociono);
 
@@ -84,12 +85,14 @@
         }
 
     </style>
+    -->
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"
             integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/trmn-fonts.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="../../public/css/core.css" rel="stylesheet" type="text/css">
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
