@@ -6,13 +6,13 @@
 /*** Basic layout and text defaults ***/
 body {
   margin: 0 !important;
-  font-family: 'Prociono', sans-serif !important;
+  //font-family: 'Prociono', sans-serif !important;
+  font-family: "Incised 901 W01 Light", sans-serif;
   background-color: #000 !important;
   font-size: 16px;
 }
 
 p {
-  font-family: "Incised 901 W01 Light";
   color: #fff;
 }
 
@@ -22,21 +22,25 @@ a {
 
 h1, .h1 {
   font-family: "Incised 901 W01 Bold" !important;
+  font-weight: 700;
   font-size: 2.25em;
   color: #fff !important;
 }
 
 h2, .h2 {
   font-family: "Incised 901 W01 Bold Cd" !important;
+  font-weight: 700;
   font-size: 2.00em;
   color: #fff !important;
 }
 h3, .h3 {
   font-family: "Incised 901 W01 Compact" !important;
+  font-weight: 800;
   color: #fff !important;
 }
 h4, .h4 {
   font-family: "Incised901 BT" !important;
+  font-weight: 800;
   color: #fff !important;
 }
 
@@ -78,7 +82,7 @@ header .vrt-ctr-parent {
 form, label {
   color: #fff !important;
   font-family: 'Incised 901 W01 Light' !important;
-  font-weight: inherit;
+  font-weight: 200;
 }
 
 input {
@@ -98,6 +102,7 @@ input:not(.button) {
   background-color: #F3BB18 !important;
   color: #000 !important;
   font-family: "Incised 901 W01 Bold Cd" !important;
+  font-weight: 700;
   padding-left: 1em;
   padding-right: 1em;
   border: none;
@@ -112,6 +117,7 @@ input:not(.button) {
 .nav-tabs > li {
   font-family: "Incised 901 W01 Bold Cd";
   font-size: 30px;
+  font-weight: 700;
   background-color: transparent;
   text-align: center;
   margin-bottom: -2px;
