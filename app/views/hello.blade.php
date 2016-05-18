@@ -199,15 +199,15 @@
                         <p>Login with your <a href="https://medusa.trmn.org">MEDUSA</a> credentials to start voting</p>
                         {{ Form::open( [ 'route' => 'signin' ] ) }}
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-md-offset-1 col-md-5">
                                 {{ Form::label( 'email', 'Email' ) }}<br/>{{ Form::email( 'email' ) }}
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-5">
                                 {{ Form::label( 'password', 'Password' ) }}<br/> {{ Form::password( 'password' ) }}
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 text-right">
+                            <div class="col-md-offset-1 col-md-10 text-right">
                                 <br/> {{ Form::submit( 'Sign in', [ 'class' => 'button' ] ) }}
                             </div>
                             {{ Form::close() }}
