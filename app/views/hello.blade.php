@@ -214,37 +214,40 @@
                             </div>
                             {{ Form::close() }}
                         </div>
-                </div>
-                @else
-                    @if(Auth::user()->checkEligibility() === true && Auth::user()->alreadyVoted() === false)
-                        <p class="h1">Please select and rank (i.e. 1, 2, 3) your top three picks in each category.</p>
-                        <?php $category = ''; ?>
-                        {{ Form::open( [ 'route' => 'vote' ] ) }}
-                        @foreach(Nominee::all() as $nominee)
-                            @if($nominee->category != $category)
-                                <?php $category = $nominee->category; ?>
-                                <h2>{{$category}}</h2>
-                            @endif
-                            <p>{{Form::select($nominee->id, [0 => 'Rate', 1, 2, 3]);}} {{$nominee->nominee}}</p>
-                        @endforeach
-                        <p>{{ Form::submit( 'Vote!', [ 'class' => 'button' ] ) }}</p>
-                        {{Form::close()}}
                     @else
-                        @if (Auth::user()->alreadyVoted() === true)
-                            <p>You are only allowed to vote once.</p>
+                        @if(Auth::user()->checkEligibility() === true && Auth::user()->alreadyVoted() === false)
+                            <p class="h1">Please select and rank (i.e. 1, 2, 3) your top three picks in each category.</p>
+                            <?php $category = ''; ?>
+                            {{ Form::open( [ 'route' => 'vote' ] ) }}
+                            @foreach(Nominee::all() as $nominee)
+                                @if($nominee->category != $category)
+                                    <?php $category = $nominee->category; ?>
+                                    <h2>{{$category}}</h2>
+                                @endif
+                                <p>{{Form::select($nominee->id, [0 => 'Rate', 1, 2, 3]);}} {{$nominee->nominee}}</p>
+                            @endforeach
+                            <p>{{ Form::submit( 'Vote!', [ 'class' => 'button' ] ) }}</p>
+                            {{Form::close()}}
                         @else
-                            <p>We're sorry, but you are currently not eligible to vote on for the nominees.</p>
+                            @if (Auth::user()->alreadyVoted() === true)
+                                <p>You are only allowed to vote once.</p>
+                            @else
+                                <p>We're sorry, but you are currently not eligible to vote on for the nominees.</p>
+                            @endif
                         @endif
                     @endif
-                @endif
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
+    <footer class="row">
         <div class="col-md-12">
-            <a href="/signout">Logout</a>
+            /* only show logout if user is logged in */
+            @if( Auth::check() )
+                <a href="/signout">Logout</a>
+            @endif
         </div>
-    </div>
+    </footer>
 </div>
 </body>
 </html>
