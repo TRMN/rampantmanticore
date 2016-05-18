@@ -16,6 +16,10 @@ p {
   color: #fff;
 }
 
+a {
+  color: #F3BB18;
+}
+
 h1, .h1 {
   font-family: "Incised 901 W01 Bold" !important;
   font-size: 2.25em;
@@ -27,10 +31,12 @@ h2, .h2 {
   font-size: 2.00em;
   color: #fff !important;
 }
-h3, .h3,
+h3, .h3 {
+  font-family: "Incised 901 W01 Compact" !important;
+  color: #fff !important;
+}
 h4, .h4 {
   font-family: "Incised901 BT" !important;
-  font-size: 1.75em;
   color: #fff !important;
 }
 
