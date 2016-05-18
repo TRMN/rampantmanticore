@@ -28,9 +28,9 @@
 </head>
 <body>
 <div class="container" style="width: 75%;">
-    <div class="row">
-        <div class="col-md-6"><img src="{{asset('images/rampantmanticore.svg')}}" height="50%" width="50%"></div>
-        <div class="col-md-6 text-center"><h2 class="rmgold prociono">The First Annual</h2>
+    <div class="row vrt-ctr-parent">
+        <div class="col-md-6 vrt-ctr-child"><img src="{{asset('images/rampantmanticore.svg')}}"></div>
+        <div class="col-md-6 text-center vrt-ctr-child"><h2 class="rmgold prociono">The First Annual</h2>
             <h1 class="rmheader">RAMPANT<br/>MANTICORE</h1>
             <h2 class="rmgold prociono">Military Science Fiction & Fantasy Awards</h2>
         </div>

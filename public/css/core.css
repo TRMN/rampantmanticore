@@ -15,12 +15,6 @@ p {
   color: #fff;
 }
 
-.rmheader {
-  font-family: "Incised901W01-NordItali" !important;
-  color: #000 !important;
-  text-shadow: -1px -1px 0 #fff,  1px -1px 0 #fff,  -1px 1px 0 #fff,  1px 1px 0 #fff !important;
-}
-
 h1 {
   font-family: "Incised 901 W01 Bold" !important;
   color: #fff !important;
@@ -34,6 +28,25 @@ h3, h4 {
   font-family: "Incised901 BT" !important;
   color: #fff !important;
 }
+
+/*** Page header styles ***/
+. vrt-ctr-parent {
+  position: relative;
+}
+
+.vrt-ctr-child {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.rmheader {
+  font-family: "Incised901W01-NordItali" !important;
+  color: #000 !important;
+  text-shadow: -1px -1px 0 #fff,  1px -1px 0 #fff,  -1px 1px 0 #fff,  1px 1px 0 #fff !important;
+}
+
+
 
 /*** Font Styles ***/
 .prociono {
@@ -102,6 +115,7 @@ input {
 .nav-tabs > li.active > a:hover {
   color: #F3BB18;
   background-color: #000;
+  border: none;
 }
 
 .tab-content {
