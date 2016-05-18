@@ -240,7 +240,11 @@
             </div>
         </div>
     </div>
-</div>
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <a href="/signoout">Logout</a>
+        </div>
+    </div>
 </div>
 </body>
 </html>

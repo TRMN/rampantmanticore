@@ -111,6 +111,10 @@ input:not(.button) {
   border: none;
 }
 
+select {
+    color: #000 !important;
+}
+
 
 /*** Tab nav styles ***/
 .nav-tabs {
@@ -131,7 +135,7 @@ input:not(.button) {
 .nav-tabs > li > a:hover,
 .nav-tabs > li > a:focus {
   color: #fff;
-  background-color: transparent;  
+  background-color: transparent;
   border: none;
 }
 
