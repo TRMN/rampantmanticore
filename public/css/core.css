@@ -80,6 +80,12 @@ header .vrt-ctr-parent {
 }
 
 
+/*** Page footer styles ***/
+footer {
+  padding: 1em 0;
+}
+
+
 /*** Form styles ***/
 form, label {
   color: #fff !important;
