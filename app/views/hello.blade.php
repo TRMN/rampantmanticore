@@ -242,7 +242,7 @@
     </div>
     <div class="row">
         <div class="col-md-12 text-right">
-            <a href="/signoout">Logout</a>
+            <a href="/signout">Logout</a>
         </div>
     </div>
 </div>
