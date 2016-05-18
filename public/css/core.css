@@ -36,11 +36,13 @@ h2, .h2 {
 h3, .h3 {
   font-family: "Incised 901 W01 Compact" !important;
   font-weight: 800;
+  font-size: 1.00em;
   color: #fff !important;
 }
 h4, .h4 {
   font-family: "Incised901 BT" !important;
   font-weight: 800;
+  font-size: 1.00em;
   color: #fff !important;
 }
 
