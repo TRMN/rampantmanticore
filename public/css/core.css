@@ -65,42 +65,52 @@ input {
 
 /*** Tab nav styles ***/
 .nav-tabs {
-    border-bottom: none;
+  border: none;
 }
 
 .nav-tabs > li {
-    font-family: "Incised901 Ct BT";
-    font-size: 30px;
-    background-color: transparent;
-    text-align: center;
-    width: 238px;
+  background-color: transparent;
+  font-family: "Incised 901 W01 Bold Cd";
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: -2px;
+  width: 238px;
 }
 
-.nav-tabs > li > a {
-    color: #fff;
+.nav-tabs > li > a,
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+  color: #fff;
+  background-color: transparent;  
+  border: none;
 }
 
 .nav-tabs > li.active {
-    background-color: #000;
-    -webkit-box-shadow: 0px -2px 5px 0px rgba(252,252,252,0.705);
-    -moz-box-shadow: 0px -2px 5px 0px rgba(252,252,252,0.705);
-    box-shadow: 0px -2px 5px 0px rgba(252,252,252,0.705);
+  background-color: #000;
+}
+
+.nav-tabs > li:hover,
+.nav-tabs > li.active,
+.nav-tabs > li.active:hover {
+  -webkit-box-shadow: 0px -2px 5px 0px rgba(252,252,252,0.705);
+  -moz-box-shadow: 0px -2px 5px 0px rgba(252,252,252,0.705);
+  box-shadow: 0px -2px 5px 0px rgba(252,252,252,0.705);
 }
 
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:focus,
 .nav-tabs > li.active > a:hover {
-    color: #F3BB18;
-    border: none;
+  color: #F3BB18;
+  background-color: #000;
 }
 
 .tab-content {
-    -webkit-box-shadow: 0px 0px 15px 0px rgba(252,252,252,0.705);
-    -moz-box-shadow: 0px 0px 15px 0px rgba(252,252,252,0.705);
-    box-shadow: 0px 0px 15px 0px rgba(252,252,252,0.705);
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(252,252,252,0.705);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(252,252,252,0.705);
+  box-shadow: 0px 0px 15px 0px rgba(252,252,252,0.705);
 }
 
 .tab-pane {
-    padding: 1em;
+  padding: 1em;
 }
 
