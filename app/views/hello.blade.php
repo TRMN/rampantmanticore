@@ -242,7 +242,7 @@
     </div>
     <footer class="row">
         <div class="col-md-12">
-            /* only show logout if user is logged in */
+            <!-- only show logout if user is logged in -->
             @if( Auth::check() )
                 <a href="/signout">Logout</a>
             @endif
