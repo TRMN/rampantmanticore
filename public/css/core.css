@@ -67,14 +67,6 @@ header .vrt-ctr-parent {
   height: 100%;
 }
 
-header .prociono {
-  font-size: 
-}
-
-header .rmheader {
-  font-size: 
-}
-
 
 /*** Form styles ***/
 form, label {
@@ -102,6 +94,7 @@ input:not(.button) {
   font-family: "Incised 901 W01 Bold Cd" !important;
   padding-left: 1em;
   padding-right: 1em;
+  border: none;
 }
 
 
