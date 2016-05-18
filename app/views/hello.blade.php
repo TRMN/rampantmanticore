@@ -196,7 +196,9 @@
                 </div>
                 <div id="login" class="tab-pane">
                     @if( !Auth::check() )
-                        <p>Login with your <a href="https://medusa.trmn.org">MEDUSA</a> credentials to start voting</p>
+                        <div class="row">
+                          <p class="col-md-offset-1 col-md-11">Login with your <a href="https://medusa.trmn.org">MEDUSA</a> credentials to start voting</p>
+                        </div>
                         {{ Form::open( [ 'route' => 'signin' ] ) }}
                         <div class="row">
                             <div class="col-md-offset-1 col-md-5">

@@ -78,20 +78,32 @@ header .rmheader {
 
 /*** Form styles ***/
 form, label {
-  font-family: 'Incised 901 W01 Light' !important;
   color: #fff !important;
+  font-family: 'Incised 901 W01 Light' !important;
+  font-weight: inherit;
 }
 
 input {
-  font-family: 'Incised 901 W01 Light' !important;
   color: #000 !important;
+  font-family: 'Incised 901 W01 Light' !important;
+  height: 33px;
 }
+
+input:not(.button) {
+  width: 100%;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
 
 .button {
   background-color: #F3BB18 !important;
   color: #000 !important;
-  font-family: "Incised 901 W01 Light" !important;
+  font-family: "Incised 901 W01 Bold Cd" !important;
+  padding-left: 1em;
+  padding-right: 1em;
 }
+
 
 /*** Tab nav styles ***/
 .nav-tabs {
