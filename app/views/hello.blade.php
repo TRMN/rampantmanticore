@@ -69,7 +69,7 @@
                     <p>The Rampant Manticore Awards are awards, sponsored by The Royal Manticoran Navy and the H. Beam
                         Piper Memorial, for the best Military Science Fiction and Fantasy novels, published in the
                         preceding year.</p>
-                    <h3 class="IncisedBoldCd">QUALIFICATIONS FOR AUTHORS</h3>
+                    <h3>QUALIFICATIONS FOR AUTHORS</h3>
                     <h4>PUBLICATION</h4>
                     <p>To be eligible for the award, your novel, novella or short story must be published as a
                         standalone work, in the case of the novel and novella, or as part of a collection, in the case
