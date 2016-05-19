@@ -29,15 +29,15 @@
 <body>
 <div class="container" style="width: 75%;">
     <header class="row">
-        <div class="col-md-5 vrt-ctr-parent"><img src="{{asset('images/rampantmanticore.svg')}}" style="height: 100%;"></div>
-        <div class="col-md-7 text-center vrt-ctr-parent"><p class="h2 rmgold prociono">The First Annual</p>
-            <h1 class="rmheader">RAMPANT&nbsp;<br/>MANTICORE&nbsp;</h1>
+        <div class="col-sm-5 vrt-ctr-parent"><img src="{{asset('images/rampantmanticore.svg')}}" class="img-responsive img-logo"></div>
+        <div class="col-sm-7 text-center vrt-ctr-parent"><p class="h2 rmgold prociono">The First Annual</p>
+            <h1 class="rmheader">&nbsp;RAMPANT&nbsp;<br/>&nbsp;MANTICORE&nbsp;</h1>
             <h2 class="h2 rmgold prociono">Military Science Fiction & Fantasy Awards</h2>
         </div>
     </header>
     <div class="row">
-        <div class="col-md-12">
-            <ul class="nav nav-tabs">
+        <div class="col-sm-12" role="navigation">
+            <ul class="nav nav-tabs nav-justified">
                 <li class="active"><a data-toggle="tab" href="#about">About</a></li>
                 <li><a data-toggle="tab" href="#rules">Rules</a></li>
                 <li><a data-toggle="tab" href="#login">@if( !Auth::check() )
@@ -45,6 +45,7 @@
                         @else
                             Vote
                         @endif</a></li>
+                <li></li>
             </ul>
 
             <div class="tab-content">
@@ -197,19 +198,19 @@
                 <div id="login" class="tab-pane">
                     @if( !Auth::check() )
                         <div class="row">
-                          <p class="col-md-offset-1 col-md-11">Login with your <a href="https://medusa.trmn.org">MEDUSA</a> credentials to start voting</p>
+                          <p class="col-sm-offset-1 col-sm-10">Login with your <a href="https://medusa.trmn.org">MEDUSA</a> credentials to start voting</p>
                         </div>
                         {{ Form::open( [ 'route' => 'signin' ] ) }}
                         <div class="row">
-                            <div class="col-md-offset-1 col-md-5">
+                            <div class="col-sm-offset-1 col-sm-5">
                                 {{ Form::label( 'email', 'Email' ) }}<br/>{{ Form::email( 'email' ) }}
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-sm-5">
                                 {{ Form::label( 'password', 'Password' ) }}<br/> {{ Form::password( 'password' ) }}
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-offset-1 col-md-10 text-right">
+                            <div class="col-sm-offset-1 col-sm-10 text-right">
                                 <br/> {{ Form::submit( 'Sign in', [ 'class' => 'button' ] ) }}
                             </div>
                             {{ Form::close() }}
@@ -249,7 +250,7 @@
         </div>
     </div>
     <footer class="row">
-        <div class="col-md-12">
+        <div class="col-sm-12">
             <!-- only show logout if user is logged in -->
             @if( Auth::check() )
                 <a href="/signout">Logout</a>
