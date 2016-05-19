@@ -71,10 +71,11 @@ h4, .h4 {
 
 
 /*** Page header styles ***/
-header .img-logo {
-  height: 150px;
+@media (max-width: @screen-xs-max) {
+  header .img-logo {
+    height: 150px;
+  }
 }
-
 @media (min-width: @screen-sm-min) { 
   header {
     height: 332px;
