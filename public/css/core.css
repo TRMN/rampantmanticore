@@ -72,7 +72,7 @@ h4, .h4 {
 
 /*** Page header styles ***/
 @media (max-width: @screen-xs-max) {
-  header .img-logo {
+  header .vrt-ctr-parent {
     height: 150px;
   }
 }
@@ -81,9 +81,6 @@ h4, .h4 {
     height: 332px;
   }
   header .vrt-ctr-parent {
-    height: 300px;
-  }
-  header .img-logo {
     height: 300px;
   }
 }
