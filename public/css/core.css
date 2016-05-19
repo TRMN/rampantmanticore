@@ -71,17 +71,19 @@ h4, .h4 {
 
 
 /*** Page header styles ***/
-header {
-  height: 332px;
-}
 header .img-logo {
-  height: 100%;
-  width: 100%;
+  height: 150px;
 }
 
 @media (min-width: @screen-sm-min) { 
+  header {
+    height: 332px;
+  }
   header .vrt-ctr-parent {
     height: 300px;
+  }
+  header .img-logo {
+    height: 100%;
   }
 }
 
@@ -128,7 +130,8 @@ select {
 
 
 /*** Tab nav styles ***/
-.nav-tabs {
+.nav-tabs,
+.nav-tabs.nav-justified {
   border-bottom: none;
 }
 
