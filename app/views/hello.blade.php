@@ -45,7 +45,7 @@
                         @else
                             Vote
                         @endif</a></li>
-                <li class="hidden"></li>
+                <li class="invisible"></li>
             </ul>
 
             <div class="tab-content">
