@@ -72,11 +72,16 @@ h4, .h4 {
 
 /*** Page header styles ***/
 @media (max-width: @screen-xs-max) {
-  header .vrt-ctr-parent {
-    height: 150px;
+  /* on extra small screens (smart phones) force the logo image to be no more than 150px tall */
+  header .logo {
+    max-height: 150px;
   }
 }
 @media (min-width: @screen-sm-min) { 
+  /* on all other screens force the logo image to be no more than 300px tall */
+  header .logo {
+    max-height: 300px;
+  }
   header {
     height: 332px;
   }
