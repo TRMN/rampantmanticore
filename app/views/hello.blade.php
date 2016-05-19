@@ -29,12 +29,9 @@
 <body>
 <div class="container" style="width: 75%;">
     <header class="row">
-        <div class="col-sm-5 vrt-ctr-parent">
-            <img src="{{asset('images/rampantmanticore.svg')}}" class="img-resposive img-logo" alt="manticore rampant or">
-        </div>
-        <div class="col-sm-7 text-center vrt-ctr-parent">
-            <p class="h2 rmgold prociono">The First Annual</p>
-            <h1 class="rmheader">RAMPANT<br/>MANTICORE</h1>
+        <div class="col-sm-5 vrt-ctr-parent"><img src="{{asset('images/rampantmanticore.svg')}}" class="img-responsive img-logo"></div>
+        <div class="col-sm-7 text-center vrt-ctr-parent"><p class="h2 rmgold prociono">The First Annual</p>
+            <h1 class="rmheader">&nbsp;RAMPANT&nbsp;<br/>&nbsp;MANTICORE&nbsp;</h1>
             <h2 class="h2 rmgold prociono">Military Science Fiction & Fantasy Awards</h2>
         </div>
     </header>
@@ -221,14 +218,22 @@
                     @else
                         @if(Auth::user()->checkEligibility() === true && Auth::user()->alreadyVoted() === false)
                             <p class="h1">Please select and rank (i.e. 1, 2, 3) your top three picks in each category.</p>
-                            <?php $category = ''; ?>
+                            <?php $category = null;
+                                  $i = 0;
+                            ?>
                             {{ Form::open( [ 'route' => 'vote' ] ) }}
                             @foreach(Nominee::all() as $nominee)
                                 @if($nominee->category != $category)
-                                    <?php $category = $nominee->category; ?>
+                                    @if(!is_null($category))
+                                        </div>
+                                    @endif
+                                    <div>
+                                    <?php $category = $nominee->category;
+                                          $i++;
+                                    ?>
                                     <h2>{{$category}}</h2>
                                 @endif
-                                <p>{{Form::select($nominee->id, [0 => 'Rate', 1, 2, 3]);}} {{$nominee->nominee}}</p>
+                                <p>{{Form::select($nominee->id, [0 => 'Rate', 1, 2, 3], null, ['id' => $nominee->id, 'class' => 'vote', 'data-index' => $i]);}} {{$nominee->nominee}}</p>
                             @endforeach
                             <p>{{ Form::submit( 'Vote!', [ 'class' => 'button' ] ) }}</p>
                             {{Form::close()}}
@@ -253,5 +258,25 @@
         </div>
     </footer>
 </div>
+<script type="text/javascript">
+    $('.vote').change(function() {
+        var selector = $(this);
+        var selections = [];
+            selections[1] = false;
+            selections[2] = false;
+            selections[3] = false;
+        var vote = selector.val();
+        var index = selector.data('index');
+
+        $(".vote[data-index='" + index + "'").not($('#' + selector.attr('id'))).each(function() {
+            selections[$(this).val()] = true;
+        });
+
+        if (selections[vote] == true) {
+            alert('You have already rated a work in this category a ' + vote);
+            $('#' + selector.attr('id')).val(0);
+        }
+    });
+</script>
 </body>
 </html>
