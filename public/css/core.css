@@ -75,10 +75,16 @@ h4, .h4 {
 header {
   height: 332px;
 }
-header .vrt-ctr-parent {
+header .img-logo {
   height: 100%;
+  width: 100%;
 }
 
+@media (min-width: @screen-sm-min) { 
+  header .vrt-ctr-parent {
+    height: 300px;
+  }
+}
 
 /*** Page footer styles ***/
 footer {
@@ -134,7 +140,7 @@ select {
   background-color: transparent;
   text-align: center;
   margin-bottom: -2px;
-  width: 238px;
+  /*width: 238px;*/
 }
 
 .nav-tabs > li > a,
