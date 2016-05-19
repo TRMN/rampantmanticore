@@ -29,7 +29,7 @@
 <body>
 <div class="container" style="width: 75%;">
     <header class="row">
-        <div class="col-sm-5 vrt-ctr-parent"><img src="{{asset('images/rampantmanticore.svg')}}" class="img-responsive img-logo"></div>
+        <div class="col-sm-5 text-center vrt-ctr-parent"><img src="{{asset('images/rampantmanticore.svg')}}"></div>
         <div class="col-sm-7 text-center vrt-ctr-parent"><p class="h2 rmgold prociono">The First Annual</p>
             <h1 class="rmheader">&nbsp;RAMPANT&nbsp;<br/>&nbsp;MANTICORE&nbsp;</h1>
             <h2 class="h2 rmgold prociono">Military Science Fiction & Fantasy Awards</h2>
@@ -45,7 +45,7 @@
                         @else
                             Vote
                         @endif</a></li>
-                <li></li>
+                <li class="hidden"></li>
             </ul>
 
             <div class="tab-content">
