@@ -11,4 +11,4 @@
 |
 */
 
-Artisan::add(new Export);
+Artisan::add(new export);
