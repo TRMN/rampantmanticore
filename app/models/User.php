@@ -42,11 +42,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
         try {
             $exams = Exam::where('member_id', '=', Auth::user()->member_id)->firstOrFail()->exams;
-        } catch (Exception $e) {
+        } catch ( Exception $e ) {
             $exams = [];
         }
 
-        $exams = array_where($exams,
+        $exams = array_where(
+            $exams,
             function ($key, $value) {
                 switch ($key) {
                     case 'IMNA-GSN-0001':
@@ -72,11 +73,20 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     {
         try {
             $votes = Vote::where('member', '=', Auth::user()->id)->firstOrFail();
-        } catch (Exception $e) {
+        } catch ( Exception $e ) {
             return false;
         }
 
         return true;
     }
 
+    public function getFullName()
+    {
+        return trim(
+            ucfirst($this->first_name) . ' ' .
+            ( empty( $this->middle_name ) ? '' : ucfirst($this->middle_name) . ' ' ) .
+            ucfirst($this->last_name) . ' ' .
+            ( empty( $this->suffix ) ? '' : $this->suffix )
+        );
+    }
 }
