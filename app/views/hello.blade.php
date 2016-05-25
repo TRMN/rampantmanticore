@@ -196,52 +196,54 @@
                     <p>Each award winner will be presented with a trophy and certificate.</p>
                 </div>
                 <div id="login" class="tab-pane">
-                    @if( !Auth::check() )
-                        <div class="row">
-                          <p class="col-sm-offset-1 col-sm-10">Login with your <a href="https://medusa.trmn.org">MEDUSA</a> credentials to start voting</p>
-                        </div>
-                        {{ Form::open( [ 'route' => 'signin' ] ) }}
-                        <div class="row">
-                            <div class="col-sm-offset-1 col-sm-5">
-                                {{ Form::label( 'email', 'Email' ) }}<br/>{{ Form::email( 'email' ) }}
+                    @if(time() < 1464310800)
+                        @if( !Auth::check() )
+                            <div class="row">
+                              <p class="col-sm-offset-1 col-sm-10">Login with your <a href="https://medusa.trmn.org">MEDUSA</a> credentials to start voting</p>
                             </div>
-                            <div class="col-sm-5">
-                                {{ Form::label( 'password', 'Password' ) }}<br/> {{ Form::password( 'password' ) }}
+                            {{ Form::open( [ 'route' => 'signin' ] ) }}
+                            <div class="row">
+                                <div class="col-sm-offset-1 col-sm-5">
+                                    {{ Form::label( 'email', 'Email' ) }}<br/>{{ Form::email( 'email' ) }}
+                                </div>
+                                <div class="col-sm-5">
+                                    {{ Form::label( 'password', 'Password' ) }}<br/> {{ Form::password( 'password' ) }}
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-offset-1 col-sm-10 text-right">
-                                <br/> {{ Form::submit( 'Sign in', [ 'class' => 'button' ] ) }}
+                            <div class="row">
+                                <div class="col-sm-offset-1 col-sm-10 text-right">
+                                    <br/> {{ Form::submit( 'Sign in', [ 'class' => 'button' ] ) }}
+                                </div>
+                                {{ Form::close() }}
                             </div>
-                            {{ Form::close() }}
-                        </div>
-                    @else
-                        @if(Auth::user()->checkEligibility() === true && Auth::user()->alreadyVoted() === false)
-                            <p class="h1">Please select and rank (i.e. 1, 2, 3) your top three picks in each category.</p>
-                            <?php $category = null;
-                                  $i = 0;
-                            ?>
-                            {{ Form::open( [ 'route' => 'vote' ] ) }}
-                            @foreach(Nominee::all() as $nominee)
-                                @if($nominee->category != $category)
-                                    @if(!is_null($category))
-                                        </div>
-                                    @endif
-                                    <div>
-                                    <?php $category = $nominee->category;
-                                          $i++;
-                                    ?>
-                                    <h2>{{$category}}</h2>
-                                @endif
-                                <p>{{Form::select($nominee->id, [0 => 'Rate', 1, 2, 3], null, ['id' => $nominee->id, 'class' => 'vote', 'data-index' => $i]);}} {{$nominee->nominee}}</p>
-                            @endforeach
-                            <p>{{ Form::submit( 'Vote!', [ 'class' => 'button' ] ) }}</p>
-                            {{Form::close()}}
                         @else
-                            @if (Auth::user()->alreadyVoted() === true)
-                                <p>You are only allowed to vote once.</p>
+                            @if(Auth::user()->checkEligibility() === true && Auth::user()->alreadyVoted() === false)
+                                <p class="h1">Please select and rank (i.e. 1, 2, 3) your top three picks in each category.</p>
+                                <?php $category = null;
+                                      $i = 0;
+                                ?>
+                                {{ Form::open( [ 'route' => 'vote' ] ) }}
+                                @foreach(Nominee::all() as $nominee)
+                                    @if($nominee->category != $category)
+                                        @if(!is_null($category))
+                                            </div>
+                                        @endif
+                                        <div>
+                                        <?php $category = $nominee->category;
+                                              $i++;
+                                        ?>
+                                        <h2>{{$category}}</h2>
+                                    @endif
+                                    <p>{{Form::select($nominee->id, [0 => 'Rate', 1, 2, 3], null, ['id' => $nominee->id, 'class' => 'vote', 'data-index' => $i]);}} {{$nominee->nominee}}</p>
+                                @endforeach
+                                <p>{{ Form::submit( 'Vote!', [ 'class' => 'button' ] ) }}</p>
+                                {{Form::close()}}
                             @else
-                                <p>We're sorry, but you are currently not eligible to vote on for the nominees.</p>
+                                @if (Auth::user()->alreadyVoted() === true)
+                                    <p>You are only allowed to vote once.</p>
+                                @else
+                                    <p>We're sorry, but you are currently not eligible to vote on for the nominees.</p>
+                                @endif
                             @endif
                         @endif
                     @else
