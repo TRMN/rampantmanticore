@@ -196,7 +196,7 @@
                     <p>Each award winner will be presented with a trophy and certificate.</p>
                 </div>
                 <div id="login" class="tab-pane">
-                    @if(time() < 1464310800)
+                    @if(time() < 1464310800 || isset($_GET['nocheck']))
                         @if( !Auth::check() )
                             <div class="row">
                               <p class="col-sm-offset-1 col-sm-10">Login with your <a href="https://medusa.trmn.org">MEDUSA</a> credentials to start voting</p>
@@ -218,7 +218,7 @@
                             </div>
                         @else
                             @if(Auth::user()->checkEligibility() === true && Auth::user()->alreadyVoted() === false)
-                                <p class="h1">Please select and rank (i.e. 1, 2, 3) your top three picks in each category.</p>
+                                <p class="h1">Please rank (i.e. 1, 2, 3) your picks in each category.</p>
                                 <?php $category = null;
                                       $i = 0;
                                 ?>
