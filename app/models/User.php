@@ -30,7 +30,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     {
         /*
          * To be eligible to vote for the nominations, the individual must be a member for at least 1 year and have
-         * passed the first mainline exam
+         * passed the first two mainline exam
          */
 
         // Check how long they've been a member
@@ -38,7 +38,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
             return false;
         }
 
-        // Check that they've passed at least the first exam
+        // Check that they've passed at least the two exam
 
         try {
             $exams = Exam::where('member_id', '=', Auth::user()->member_id)->firstOrFail()->exams;
@@ -55,6 +55,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface
                     case 'LU-Core-01':
                     case 'SIA-RMMC-0001':
                     case 'SIA-RMN-0001':
+                    case 'IMNA-GSN-0002':
+                    case 'KR1MA-RMA-0002':
+                    case 'LU-Core-02':
+                    case 'SIA-RMMC-0002':
+                    case 'SIA-RMN-0002':
                         return true;
                     default:
                         return false;
