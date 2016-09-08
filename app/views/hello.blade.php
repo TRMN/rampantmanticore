@@ -223,7 +223,7 @@
                                       $i = 0;
                                 ?>
                                 {{ Form::open( [ 'route' => 'vote' ] ) }}
-                                @foreach(Nominee::all() as $nominee)
+                                @foreach(Nominee::all()->groupBy('category') as $nominee)
                                     @if($nominee->category != $category)
                                         @if(!is_null($category))
                                             </div>
