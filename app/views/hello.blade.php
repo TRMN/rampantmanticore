@@ -196,7 +196,7 @@
                     <p>Each award winner will be presented with a trophy and certificate.</p>
                 </div>
                 <div id="login" class="tab-pane">
-                    @if(time() < 1464310800 || isset($_GET['nocheck']))
+                    @if(time() > 1473897600 || isset($_GET['nocheck']))
                         @if( !Auth::check() )
                             <div class="row">
                               <p class="col-sm-offset-1 col-sm-10">Login with your <a href="https://medusa.trmn.org">MEDUSA</a> credentials to start voting</p>
