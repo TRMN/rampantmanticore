@@ -57,7 +57,7 @@
                         academy and completed the initial course.</p>
 
                     <p>This is an annual award, with the levels of novel, novella, and short story for both science
-                        fiction and fantasy. There is also an overall award, the H. Beam Piper Award, which if for the
+                        fiction and fantasy. There is also an overall award, the H. Beam Piper Award, which is for the
                         overall best work, regardless of the category. To start voting, please click on
                         the @if( !Auth::check() )
                             Login
@@ -196,7 +196,7 @@
                     <p>Each award winner will be presented with a trophy and certificate.</p>
                 </div>
                 <div id="login" class="tab-pane">
-                    @if(time() > 1473897600 || isset($_GET['nocheck']))
+                    @if(time() < 1477540800 || isset($_GET['nocheck']))
                         @if( !Auth::check() )
                             <div class="row">
                               <p class="col-sm-offset-1 col-sm-10">Login with your <a href="https://medusa.trmn.org">MEDUSA</a> credentials to start voting</p>
@@ -247,7 +247,7 @@
                             @endif
                         @endif
                     @else
-                        <p class="h1">We're sorry, but voting for the nominations has closed. Voting for the actual award will be available starting September 15th, 2016</p>
+                        <p class="h1">We're sorry, but on-line voting has closed for the year</p>
                     @endif
                 </div>
             </div>
